@@ -1,0 +1,16 @@
+{
+  "evaluation_source_revision": "ad87f2f8a9530c9ccd39d37d1391e027bbc48d67",
+  "evaluation_source_manifest_created_utc": "2026-09-20T14:44:56.088459+00:00",
+  "selected_checkpoint_sha256": "45b256995362643db098fecc948612a7db2e3edd31e1762185dd94821016b6f4",
+  "core_model_source_sha256": "4e1f480c81072a192b49cd618e52d0c69818b581228f7ea562327fedf26d8e0a",
+  "training_run_git_commit": "6408f531d8998653d8e874395157626cf1ed5a87",
+  "archived_public_repository": "https://github.com/cyxuccc/PaperCode",
+  "public_repository_observed_head": "85c692eebfac95fb440704e213ce3cfb3bc20e08",
+  "public_repository_observed_commit_utc": "2025-03-06T13:17:01Z",
+  "source_archive_sha256": "baa4256228d0a06f871097ad7a14750f3aebc281c7e352af676749e77ad1230a",
+  "source_archive_count": 190,
+  "notes": "This is source used by the archived September 2026 evaluation and was read without modifying the shared server. Training and evaluation metadata refer to distinct revisions. Model weights, third-party pretrained weights and patient MR images are not included.",
+  "training_run_metadata_git_commit": "6408f531d8998653d8e874395157626cf1ed5a87",
+  "training_run_metadata_caveat": "Git hash from W&B train_net.py run metadata; the checked-out train_net.py at that historical commit differs from the current server source. The complete training dependency and pretrained-weight inventory is not bundled.",
+  "selected_checkpoint_epoch_zero_based": 165
+}

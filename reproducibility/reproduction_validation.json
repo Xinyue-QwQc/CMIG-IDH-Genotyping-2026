@@ -1,0 +1,25 @@
+{
+  "formal_bootstrap_replicates": 20000,
+  "random_seed": 20260920,
+  "analysis": "fixed-model patient-cluster bootstrap",
+  "comparison": [
+    {
+      "file": "main_results.csv",
+      "rows": 28,
+      "exact_numeric_values": 756,
+      "numeric_values_match": true,
+      "archived_sha256": "b746ef0f60a59a684bb0aedb4af6d962deec6ca069be1aa1dcb944ea31c1e0bc"
+    },
+    {
+      "file": "paired_comparisons.csv",
+      "rows": 52,
+      "exact_numeric_values": 624,
+      "numeric_values_match": true,
+      "archived_sha256": "1a66f86e2abc67a74fb3820474c10707e5ea59d06a1f0fe35dedde129cc27233"
+    }
+  ],
+  "pseudonymized_manifest_records": 1318,
+  "prediction_files": 28,
+  "timing_measurement_rows": 420,
+  "source": "Archived result tables in the manuscript package compared to pseudonymous input rerun; raw terminal output kept in checks/reproduction_console.txt."
+}

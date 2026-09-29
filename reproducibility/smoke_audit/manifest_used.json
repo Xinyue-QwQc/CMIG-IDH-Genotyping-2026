@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "seed": 20260920,
+  "bootstrap": 20000,
+  "ours_model": "Ours",
+  "planned_models": [
+    {
+      "model": "Ours",
+      "display_name": "Ours (FinalVersion 2026-06-01)"
+    },
+    {
+      "model": "EViT",
+      "display_name": "EViT-Small"
+    },
+    {
+      "model": "MambaVision",
+      "display_name": "MambaVision"
+    },
+    {
+      "model": "UniRepLKNet",
+      "display_name": "UniRepLKNet-T"
+    },
+    {
+      "model": "RepVit",
+      "display_name": "RepVit-m1.5"
+    },
+    {
+      "model": "MedViT",
+      "display_name": "MedViT"
+    },
+    {
+      "model": "M3T",
+      "display_name": "M3T"
+    },
+    {
+      "model": "CTNet",
+      "display_name": "CTNet3D"
+    },
+    {
+      "model": "MRS",
+      "display_name": "MRS (Abouyoussef et al.)"
+    },
+    {
+      "model": "Liang",
+      "display_name": "3D DenseNet-121 (Liang baseline)"
+    },
+    {
+      "model": "Chang",
+      "display_name": "3D ResNet-50 (Chang baseline)"
+    },
+    {
+      "model": "WSOFNet",
+      "display_name": "WSOFNet"
+    },
+    {
+      "model": "VoCOv2",
+      "display_name": "VoCOv2"
+    },
+    {
+      "model": "3DINO",
+      "display_name": "3DINO"
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "Internal",
+      "mapping_dataset": "Internal",
+      "mapping_split": "Test"
+    },
+    {
+      "id": "External",
+      "mapping_dataset": "External",
+      "mapping_split": "Test"
+    }
+  ],
+  "mapping_path": "case_mapping.json",
+  "predictions": [
+    {
+      "id": "Ours_Internal",
+      "model": "Ours",
+      "display_name": "Ours (FinalVersion 2026-06-01)",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/Ours_Internal.csv",
+      "sha256": "08348b3daa11b0fc11d45484c18e021b598b20be3cb2c52e2d38494b39454aaa",
+      "original_prediction_sha256": "4e4b810869bd07f2d498d1a29244300eea029f78b5fdf05040079f149b50eb8c",
+      "checkpoint_sha256": "45b256995362643db098fecc948612a7db2e3edd31e1762185dd94821016b6f4"
+    },
+    {
+      "id": "Ours_External",
+      "model": "Ours",
+      "display_name": "Ours (FinalVersion 2026-06-01)",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/Ours_External.csv",
+      "sha256": "b9a724e2c2deee0d36b1c45ac5f5a106f83b8bc53afc6627367ad133695771d9",
+      "original_prediction_sha256": "c4b0243964ba88d8fb43e8422faf4e71be47058b8f3d8b7595dda4d52fa1337e",
+      "checkpoint_sha256": "45b256995362643db098fecc948612a7db2e3edd31e1762185dd94821016b6f4"
+    },
+    {
+      "id": "EViT_Internal",
+      "model": "EViT",
+      "display_name": "EViT-Small",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/EViT_Internal.csv",
+      "sha256": "fc8011ffedd50e5103479b76aa00a1d3246fda7ed3cafff2a933696a56678fc5",
+      "original_prediction_sha256": "1a9538c9123e177b3b847e190cbc159a7b955344d675c0f15aaa2d7e383f03d5",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "EViT_External",
+      "model": "EViT",
+      "display_name": "EViT-Small",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/EViT_External.csv",
+      "sha256": "0d40eaae9a6d9e8e041d447968345649418c6d951e2cc42bbdd7d464ebcebab5",
+      "original_prediction_sha256": "1f13531a7e3945f7949d7dbb1cb7c65d16ddee202797580026e8e0aa03536dbd",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "MambaVision_Internal",
+      "model": "MambaVision",
+      "display_name": "MambaVision",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/MambaVision_Internal.csv",
+      "sha256": "86f945e17532d41988f50a5169b03f3c6d6e166543ef0af476e8ea5d07d0292f",
+      "original_prediction_sha256": "2cd89db7dd90101f16d692001f811e028c2d718e84255a58844fcab883cef8e4",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "MambaVision_External",
+      "model": "MambaVision",
+      "display_name": "MambaVision",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/MambaVision_External.csv",
+      "sha256": "0bef5dd62c29e315d23e34dd53369d20dae9fd184a4f0e5f6c8f620b46490a58",
+      "original_prediction_sha256": "6e94b329c7c0e4f6b408ca51f1fbdc87318ae580beef8b8d7c33ed7e0504ea73",
+      "checkpoint_sha256": "c31b63f9fdc781bdbeb3ea19dd54df1660a002920cb7d85958fa1d112514f7a3"
+    },
+    {
+      "id": "UniRepLKNet_Internal",
+      "model": "UniRepLKNet",
+      "display_name": "UniRepLKNet-T",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/UniRepLKNet_Internal.csv",
+      "sha256": "9745c40fde11093c5dd4728dcdcd20eae2f869213be621233c970d33e800a3d5",
+      "original_prediction_sha256": "f4ea5398a83bb526e088001d0e82d6aac1244c027d9edcb426a79ee899e6d4b3",
+      "checkpoint_sha256": "62a82a3dce3c2a337480a89eb7197535811edf62a3e9e7d29122b87b5f578c74"
+    },
+    {
+      "id": "UniRepLKNet_External",
+      "model": "UniRepLKNet",
+      "display_name": "UniRepLKNet-T",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/UniRepLKNet_External.csv",
+      "sha256": "aeff0dc1bedd6b6a679049e26662919a143b48458636598dd670a1e73db9355a",
+      "original_prediction_sha256": "39b44340dad945f414f9c0421f535112ad1205b2baceffe8b463f5b8f82af0bf",
+      "checkpoint_sha256": "62a82a3dce3c2a337480a89eb7197535811edf62a3e9e7d29122b87b5f578c74"
+    },
+    {
+      "id": "RepVit_External",
+      "model": "RepVit",
+      "display_name": "RepVit-m1.5",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/RepVit_External.csv",
+      "sha256": "b6befb363b9769eb6cf2b51a7111f91430145bee73a5c8d43a02d895cd29a268",
+      "original_prediction_sha256": "d53806fdde8e7eb88dcfaf16b001d3159e5ff4dc6cb9431edcee8c8603102158",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "RepVit_Internal",
+      "model": "RepVit",
+      "display_name": "RepVit-m1.5",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/RepVit_Internal.csv",
+      "sha256": "3ca3dd777b0899895fad060cfb23c3fbb9f5e467840c942b71d9066a257545a9",
+      "original_prediction_sha256": "871cbb991723d7f2b11e734a7737d213aee1b1c667385c6691f23c4c495b38cb",
+      "checkpoint_sha256": "892f513d35e47066a46d81e23db333aa6c4b72aa69d3e590a733f70b4c49ed70"
+    },
+    {
+      "id": "MedViT_Internal",
+      "model": "MedViT",
+      "display_name": "MedViT",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/MedViT_Internal.csv",
+      "sha256": "4e38ae3881c2162ffe1a2ddd4fe164d386c8cac5b21048ecef59d06bbb14c421",
+      "original_prediction_sha256": "c94e09cdab4be976076af5598d5dedca00c665076bd0c3ee5be6fa3333fb6604",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "MedViT_External",
+      "model": "MedViT",
+      "display_name": "MedViT",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/MedViT_External.csv",
+      "sha256": "fae91e3c3af88d5cff7d16fd5ace86703e85fa3d233074d4c8a15322d468e181",
+      "original_prediction_sha256": "94a0787cad5624d6ebd9075e89f9cc07c725172710a78c6250491363596fccfc",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "M3T_Internal",
+      "model": "M3T",
+      "display_name": "M3T",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/M3T_Internal.csv",
+      "sha256": "a8f95aa41fd08ac7216256174b01ca4615b65ce07c8ee1a8f43cb1014b7e0eb1",
+      "original_prediction_sha256": "3b021a27d965d66f1d3c4fe7a8007260b8ce899f7199d6a8152ebb54f10acdad",
+      "checkpoint_sha256": "29f0987ee89f57e38cf70ec7128c25437fd9ec83db76b9a97c9829ebf5163a87"
+    },
+    {
+      "id": "M3T_External",
+      "model": "M3T",
+      "display_name": "M3T",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/M3T_External.csv",
+      "sha256": "dbcba5da1c6985df4b272291e38794e8d4716ec03e244a20c5fd0f4afec5b2a1",
+      "original_prediction_sha256": "d6b398c81b14b39099ea577e30623eee8e13cbd3ed87642d4bce050da3852b80",
+      "checkpoint_sha256": "29f0987ee89f57e38cf70ec7128c25437fd9ec83db76b9a97c9829ebf5163a87"
+    },
+    {
+      "id": "CTNet_Internal",
+      "model": "CTNet",
+      "display_name": "CTNet3D",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/CTNet_Internal.csv",
+      "sha256": "cd7481491c9def10e90a54d1ec91715120e2355c6579de38c8150984b14d9098",
+      "original_prediction_sha256": "3e56d0649db4d3d78a1adb0e4b0490ecf63c954e4706d8287adb653599717f2a",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "CTNet_External",
+      "model": "CTNet",
+      "display_name": "CTNet3D",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/CTNet_External.csv",
+      "sha256": "8ebcc1289b3b08c3ffdeec51de7790b645e6a3d6b1f86e6e81942735101b56f8",
+      "original_prediction_sha256": "0f4eb3701f0026fe451920f6aca319aad310df3c65a2d896cadde28300b000ae",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "MRS_Internal",
+      "model": "MRS",
+      "display_name": "MRS (Abouyoussef et al.)",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/MRS_Internal.csv",
+      "sha256": "323f7815621a4bdaba8ed3dcf703074c5ae98eb61c9f6574fc4df2b5969a8aed",
+      "original_prediction_sha256": "1717aeb51216c0df5f07721f65d5d4beded43abf89ee21ffc74a29c7f0abbc74",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "MRS_External",
+      "model": "MRS",
+      "display_name": "MRS (Abouyoussef et al.)",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/MRS_External.csv",
+      "sha256": "a62f524ab2c2864ee605d31231cb92bde75847baf132fc0141cc72d0dafd3dcf",
+      "original_prediction_sha256": "b30cc3d5b92183d08d88027924a049169e143610bb19d2fef5925262a7b3a825",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "Liang_Internal",
+      "model": "Liang",
+      "display_name": "3D DenseNet-121 (Liang baseline)",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/Liang_Internal.csv",
+      "sha256": "c39d3e7236e0341095147dc7c917e2a5048681aac5b3cc777b1be8e5b62780b7",
+      "original_prediction_sha256": "1e9f7803096c4fb132d853cb752d9e125e840ee0506793413b92d042ba211588",
+      "checkpoint_sha256": "e3f79bc4b62d740be199de675eeb2ae8cdfc4e9a9e3047fa8a811b9e7b5cab72"
+    },
+    {
+      "id": "Liang_External",
+      "model": "Liang",
+      "display_name": "3D DenseNet-121 (Liang baseline)",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/Liang_External.csv",
+      "sha256": "05051e7c947daeef5544abd6edda1db9073f6320cc288058d1dd31d69f9b54bd",
+      "original_prediction_sha256": "7658fdc919fdfb0711190520d1bffa8dd9151c4b1303fcced96c06a08cdcd85e",
+      "checkpoint_sha256": "e3f79bc4b62d740be199de675eeb2ae8cdfc4e9a9e3047fa8a811b9e7b5cab72"
+    },
+    {
+      "id": "Chang_Internal",
+      "model": "Chang",
+      "display_name": "3D ResNet-50 (Chang baseline)",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/Chang_Internal.csv",
+      "sha256": "a9e349dccd4db48f692cdc9614be183536118577702cc16c6c7355c074aaf7a5",
+      "original_prediction_sha256": "bbeb7823e16e9764213b29df5b9c5d4a34abfd113e785d0bc210878678d7341e",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "Chang_External",
+      "model": "Chang",
+      "display_name": "3D ResNet-50 (Chang baseline)",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/Chang_External.csv",
+      "sha256": "69220e66395c08999fecc0effd8210e582157fccbfcec3828371a62a3da3a1c5",
+      "original_prediction_sha256": "062ec6f7c6cfb3dcce882b5b61f4c87892bde2600b9757c3fdcdcab0bc87e86a",
+      "checkpoint_sha256": "3dba7ad4a6134f4d0a641f5d940c1c05f9a752468f763ed1f527f40030f15099"
+    },
+    {
+      "id": "WSOFNet_Internal",
+      "model": "WSOFNet",
+      "display_name": "WSOFNet",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/WSOFNet_Internal.csv",
+      "sha256": "0aa6a2799df823476d379f6666591ac47ba9c6c9d3141a96ad326566360c72a5",
+      "original_prediction_sha256": "e4d710fe6afbeb72657669bf2c445a523247e258b0e689f4ee2200b792d380d0",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "WSOFNet_External",
+      "model": "WSOFNet",
+      "display_name": "WSOFNet",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/WSOFNet_External.csv",
+      "sha256": "80a76b3de87a8caec8eb68808c63d04fee0e9ae6df27453196fdaa871ff460f8",
+      "original_prediction_sha256": "98e45e44b9b3280222c4d3c24112cfe9bb5688c3868566a1749b3475f0d7292a",
+      "checkpoint_sha256": "73e62e3cc7332e4c0f31bc2a23f3a9db04ae4ccc04bb2215e06cd107c1890d74"
+    },
+    {
+      "id": "VoCOv2_Internal",
+      "model": "VoCOv2",
+      "display_name": "VoCOv2",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/VoCOv2_Internal.csv",
+      "sha256": "ffabe93fa88dce1b07d3bd6f54e0cd280ccb65118ccb6c410a19c30a04968428",
+      "original_prediction_sha256": "1a7e5ffb84d78f2a3f10928a07b155a6e604d44c0bf693b04b76b8008bd0dee8",
+      "checkpoint_sha256": "644593d674724f9bfacda3633c2e14323277e2c39602e8bb46bc39b92ad53ae0"
+    },
+    {
+      "id": "VoCOv2_External",
+      "model": "VoCOv2",
+      "display_name": "VoCOv2",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/VoCOv2_External.csv",
+      "sha256": "da76516721bc7bb69ccae830047eee6ecc6fe15ddefbc3b8ee08b59608fc814d",
+      "original_prediction_sha256": "c7b0aacd423e3afd6984accc8d9f1af2c884406012f64c483ed9aa654f613f1a",
+      "checkpoint_sha256": "644593d674724f9bfacda3633c2e14323277e2c39602e8bb46bc39b92ad53ae0"
+    },
+    {
+      "id": "3DINO_Internal",
+      "model": "3DINO",
+      "display_name": "3DINO",
+      "cohort": "Internal",
+      "status": "selected",
+      "path": "predictions/3DINO_Internal.csv",
+      "sha256": "315441bb55f54fcf692cfade758492f89a14f7843369fe577df1b7cb502be784",
+      "original_prediction_sha256": "cd43f6958cae03db52a32cfdab5b25146ebb47c65a2264d1434c1a20f72e24f0",
+      "checkpoint_sha256": ""
+    },
+    {
+      "id": "3DINO_External",
+      "model": "3DINO",
+      "display_name": "3DINO",
+      "cohort": "External",
+      "status": "selected",
+      "path": "predictions/3DINO_External.csv",
+      "sha256": "e0be656b9b64e6af63b3718802a2baa0472914f40562e2daab50d16cd5a58db0",
+      "original_prediction_sha256": "dd61ac5dd739be25969822b290a07f9d44261fd7fbe017d4e75652e485feead6",
+      "checkpoint_sha256": ""
+    }
+  ]
+}

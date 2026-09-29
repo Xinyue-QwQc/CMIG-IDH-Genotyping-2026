@@ -1,0 +1,521 @@
+{
+  "analysis_kind": "SMOKE_TEST_NOT_FOR_PAPER",
+  "completed_utc": "2026-09-28T16:48:25.969974+00:00",
+  "manifest_path": "D:\\code\\paper\\Overleaf Projects (1 items)\\CMIG投稿稿_2026-09-26\\Supplementary\\Reproducibility\\selected_predictions.json",
+  "manifest_sha256": "26c5ffe54e9f437cd2681bb45c4d67b7fa3ee039e16890733e5fedd3aaeef328",
+  "mapping_path": "D:\\code\\paper\\Overleaf Projects (1 items)\\CMIG投稿稿_2026-09-26\\Supplementary\\Reproducibility\\case_mapping.json",
+  "mapping_sha256": "f6b64d31f6aa99116c72abf44935b33b0199570eaf923dd88242735a854d453b",
+  "script_sha256": "e5ec1a874378db073459625efce62a6de49e7a596d345ffa5f7eb35fdff124d1",
+  "seed": 20260920,
+  "bootstrap": 100,
+  "rng": "numpy.random.default_rng / PCG64",
+  "sampling": "class-stratified patient-cluster multinomial counts; sorted patient IDs; include all scans; same weights across models within each cohort; RNG reinitialized with the recorded seed for each cohort",
+  "estimand": "record-weighted fixed trained-model performance; not training-seed variability",
+  "positive_class": "IDH-mutant=1",
+  "threshold": "score>0.5; exact tie classified WT",
+  "ci": "pointwise 2.5%/97.5% percentile, numpy quantile method=linear; not simultaneous intervals",
+  "p_value": "(1 + count(abs(delta_boot-delta_observed)>=abs(delta_observed))) / (B_valid+1); 1e-14 floating boundary tolerance; nonzero constant bootstrap differences yield NA",
+  "holm": "52 prespecified hypotheses; unavailable hypotheses use p=1 internally but display NA",
+  "AP": "noninterpolated average precision, not trapezoidal PR area",
+  "n_planned_model_cohort_rows": 28,
+  "n_valid": 28,
+  "n_unavailable": 0,
+  "n_invalid": 0,
+  "n_planned_test_rows": 52,
+  "n_testable": 52,
+  "holm_family_size": 52,
+  "all_planned_predictions_available": true,
+  "cohorts": [
+    {
+      "cohort": "Internal",
+      "records": 163,
+      "patients": 163,
+      "patient_WT": 141,
+      "patient_MT": 22,
+      "id_set_sha256": "c9cd7b6c1485b13282bfb88fd3b7798f9aedba2d1c632e0fd91a87ef0c5b974a",
+      "weights_file": "bootstrap_patient_weights_Internal.npz",
+      "weights_array_sha256": "a7c6eca60bee58f2f575f919fb1756485fd64dbbbc4a26ca8fa963a68ef1e7c6",
+      "weights_file_sha256": "02bbcf0c57786f7f9bf201060e4104687fc4715c5d3288f7d2ad4dbab3ff3493"
+    },
+    {
+      "cohort": "External",
+      "records": 501,
+      "patients": 495,
+      "patient_WT": 392,
+      "patient_MT": 103,
+      "id_set_sha256": "14827fd47a1c83b188a03fb9b115e5348f1a107d6d56cac1fb523ccafe05a00d",
+      "weights_file": "bootstrap_patient_weights_External.npz",
+      "weights_array_sha256": "1525cff81fa8a775213b7c4288a84219ed944e683e0c5da6c3268f66296605d6",
+      "weights_file_sha256": "c18f41b09051a6a1bf8733661c6e8297be9f9115ceaeb01e89660ee9dec1537b"
+    }
+  ],
+  "bootstrap_metric_arrays": {
+    "model_000": {
+      "cohort": "Internal",
+      "model": "Ours",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_001": {
+      "cohort": "Internal",
+      "model": "EViT",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_002": {
+      "cohort": "Internal",
+      "model": "MambaVision",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_003": {
+      "cohort": "Internal",
+      "model": "UniRepLKNet",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_004": {
+      "cohort": "Internal",
+      "model": "RepVit",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_005": {
+      "cohort": "Internal",
+      "model": "MedViT",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_006": {
+      "cohort": "Internal",
+      "model": "M3T",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_007": {
+      "cohort": "Internal",
+      "model": "CTNet",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_008": {
+      "cohort": "Internal",
+      "model": "MRS",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_009": {
+      "cohort": "Internal",
+      "model": "Liang",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_010": {
+      "cohort": "Internal",
+      "model": "Chang",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_011": {
+      "cohort": "Internal",
+      "model": "WSOFNet",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_012": {
+      "cohort": "Internal",
+      "model": "VoCOv2",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_013": {
+      "cohort": "Internal",
+      "model": "3DINO",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_014": {
+      "cohort": "External",
+      "model": "Ours",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_015": {
+      "cohort": "External",
+      "model": "EViT",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_016": {
+      "cohort": "External",
+      "model": "MambaVision",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_017": {
+      "cohort": "External",
+      "model": "UniRepLKNet",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_018": {
+      "cohort": "External",
+      "model": "RepVit",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_019": {
+      "cohort": "External",
+      "model": "MedViT",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_020": {
+      "cohort": "External",
+      "model": "M3T",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_021": {
+      "cohort": "External",
+      "model": "CTNet",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_022": {
+      "cohort": "External",
+      "model": "MRS",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_023": {
+      "cohort": "External",
+      "model": "Liang",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_024": {
+      "cohort": "External",
+      "model": "Chang",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_025": {
+      "cohort": "External",
+      "model": "WSOFNet",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_026": {
+      "cohort": "External",
+      "model": "VoCOv2",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    },
+    "model_027": {
+      "cohort": "External",
+      "model": "3DINO",
+      "columns": [
+        "ACC",
+        "AUC",
+        "Specificity",
+        "Sensitivity",
+        "BA",
+        "PPV",
+        "NPV",
+        "F1",
+        "AP"
+      ]
+    }
+  },
+  "metric_warnings": [
+    {
+      "cohort": "External",
+      "model": "VoCOv2",
+      "display_name": "VoCOv2",
+      "metric": "Sensitivity",
+      "status": "valid",
+      "reason": "",
+      "estimate": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "valid_bootstrap": 100,
+      "bootstrap_replicates": 100,
+      "seed": 20260920,
+      "n_records": 501,
+      "n_patients": 495,
+      "warning": "; degenerate percentile interval"
+    },
+    {
+      "cohort": "External",
+      "model": "VoCOv2",
+      "display_name": "VoCOv2",
+      "metric": "NPV",
+      "status": "valid",
+      "reason": "",
+      "estimate": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "valid_bootstrap": 100,
+      "bootstrap_replicates": 100,
+      "seed": 20260920,
+      "n_records": 501,
+      "n_patients": 495,
+      "warning": "; degenerate percentile interval"
+    }
+  ],
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "limitations": [
+    "patient groups are public-ID/follow-up mappings, not a completed cross-dataset identity audit",
+    "patient bootstrap does not repair train/validation/test patient overlap",
+    "CI and approximate p-values condition on the fixed trained models and cohort class composition",
+    "percentile CIs and centered-bootstrap tests need not agree at finite-sample boundaries"
+  ]
+}

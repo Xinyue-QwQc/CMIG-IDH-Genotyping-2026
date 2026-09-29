@@ -1,0 +1,27 @@
+{
+  "collection": "UCSF-PDGM",
+  "doi": "10.7937/TCIA.BDGF-8V37",
+  "study_image_package": "Version 3 source image package",
+  "v3_release_date": "2023-01-11",
+  "v4_update_date": "2023-04-07",
+  "v5_update_date": "2025-05-30",
+  "source_package_directory_label": "PKG_UCSF_PDGM_v3/UCSF_PDGM_v3_needed",
+  "source_imaging_folder_count": 501,
+  "external_scan_manifest_count": 501,
+  "external_manifest_folders_matched_in_v3_package": 501,
+  "followup_cases_using_v3_renamed_ids": 6,
+  "old_identifiers_before_v3_renaming_present": 0,
+  "four_study_mri_sequence_file_suffixes": [
+    "T1_bias.nii.gz",
+    "T1c_bias.nii.gz",
+    "T2_bias.nii.gz",
+    "FLAIR_bias.nii.gz"
+  ],
+  "external_list_sha256": "696e27de64697f0cf7fbca2402c872e224036aca9fafdb126ebc7a2b64880c8e",
+  "source_metadata_file": "UCSF-PDGM-metadata_v2.csv",
+  "source_metadata_sha256": "c83b2783ce78d513ba96efa1d90a7e27fe045553ca8e1e57361406c1f1ba1df6",
+  "version_history_source": "The Cancer Imaging Archive, UCSF-PDGM collection history, https://www.cancerimagingarchive.net/collection/ucsf-pdgm/",
+  "version4_change": "Added bval/bvec entries to the data access table and moved the metadata glossary.",
+  "version5_change": "Corrected DTI_eddy_noreg NIfTI headers and provided per-exam rotated bvec files.",
+  "scope": "Version 3 designation identifies the on-server source package and naming used to create the evaluated four-sequence dataset. The download transaction receipt and original release archive checksum were not retained. No cross-version, bytewise image comparison was performed."
+}
