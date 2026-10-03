@@ -1,0 +1,14 @@
+# Documentation, manifests and release checksums use LF.
+.gitattributes text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.sha256 text eol=lf
+reproducibility/SHA256SUMS.csv text eol=lf
+
+# Preserve historical source and statistics-script bytes.
+source/** -text
+reproducibility/main_statistics.py -text
+
+# Preserve the Supplementary prediction CSV bytes and CRLF checksums.
+reproducibility/predictions/*.csv -text
