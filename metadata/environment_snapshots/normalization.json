@@ -1,0 +1,407 @@
+{
+  "method": "Replace local file references with public package names; pin only versions present in the recorded wheel filename.",
+  "records": [
+    {
+      "file": "source/requirements.txt",
+      "package": "asttokens",
+      "replacement": "asttokens",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "Bottleneck",
+      "replacement": "Bottleneck",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "Brotli",
+      "replacement": "Brotli",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "certifi",
+      "replacement": "certifi",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "charset-normalizer",
+      "replacement": "charset-normalizer",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "comm",
+      "replacement": "comm",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "contourpy",
+      "replacement": "contourpy",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "cycler",
+      "replacement": "cycler",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "debugpy",
+      "replacement": "debugpy",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "decorator",
+      "replacement": "decorator",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "exceptiongroup",
+      "replacement": "exceptiongroup",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "executing",
+      "replacement": "executing",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "filelock",
+      "replacement": "filelock",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "gmpy2",
+      "replacement": "gmpy2",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "idna",
+      "replacement": "idna",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "importlib-resources",
+      "replacement": "importlib-resources",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "importlib_metadata",
+      "replacement": "importlib_metadata",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "ipykernel",
+      "replacement": "ipykernel",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "ipython",
+      "replacement": "ipython",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "jedi",
+      "replacement": "jedi",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "Jinja2",
+      "replacement": "Jinja2",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "joblib",
+      "replacement": "joblib",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "jupyter_client",
+      "replacement": "jupyter_client",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "jupyter_core",
+      "replacement": "jupyter_core",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "kiwisolver",
+      "replacement": "kiwisolver",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "MarkupSafe",
+      "replacement": "MarkupSafe",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "matplotlib-inline",
+      "replacement": "matplotlib-inline",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "mkl-fft",
+      "replacement": "mkl-fft",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "mkl-random",
+      "replacement": "mkl-random",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "mpld3",
+      "replacement": "mpld3",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "mpmath",
+      "replacement": "mpmath",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "nest_asyncio",
+      "replacement": "nest_asyncio",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "networkx",
+      "replacement": "networkx",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "numexpr",
+      "replacement": "numexpr",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "numpy",
+      "replacement": "numpy==1.26.4",
+      "version_basis": "version recorded in wheel filename"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "packaging",
+      "replacement": "packaging",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pandas",
+      "replacement": "pandas==2.1.4",
+      "version_basis": "version recorded in wheel filename"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "parso",
+      "replacement": "parso",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pexpect",
+      "replacement": "pexpect",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pickleshare",
+      "replacement": "pickleshare",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pillow",
+      "replacement": "pillow",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "platformdirs",
+      "replacement": "platformdirs",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "prompt_toolkit",
+      "replacement": "prompt_toolkit",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "ptyprocess",
+      "replacement": "ptyprocess==0.7.0",
+      "version_basis": "version recorded in wheel filename"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pure_eval",
+      "replacement": "pure_eval",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "Pygments",
+      "replacement": "Pygments",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pyparsing",
+      "replacement": "pyparsing",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "PySocks",
+      "replacement": "PySocks",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "python-dateutil",
+      "replacement": "python-dateutil",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pytz",
+      "replacement": "pytz",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "PyYAML",
+      "replacement": "PyYAML",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "pyzmq",
+      "replacement": "pyzmq",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "requests",
+      "replacement": "requests",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "scikit-learn",
+      "replacement": "scikit-learn",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "scipy",
+      "replacement": "scipy==1.11.4",
+      "version_basis": "version recorded in wheel filename"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "six",
+      "replacement": "six",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "stack_data",
+      "replacement": "stack_data",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "sympy",
+      "replacement": "sympy",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "threadpoolctl",
+      "replacement": "threadpoolctl",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "tornado",
+      "replacement": "tornado",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "traitlets",
+      "replacement": "traitlets",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "typing_extensions",
+      "replacement": "typing_extensions",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "tzdata",
+      "replacement": "tzdata",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "unicodedata2",
+      "replacement": "unicodedata2",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "urllib3",
+      "replacement": "urllib3",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/requirements.txt",
+      "package": "wcwidth",
+      "replacement": "wcwidth",
+      "version_basis": "exact version unavailable in the recorded local path"
+    },
+    {
+      "file": "source/text_requirements.txt",
+      "package": "flash-attn",
+      "replacement": "flash-attn==2.7.3",
+      "version_basis": "version recorded in wheel filename"
+    }
+  ]
+}

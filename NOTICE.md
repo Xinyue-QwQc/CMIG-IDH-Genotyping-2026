@@ -1,3 +1,5 @@
-# Notice
+# Reuse Terms
 
-This repository is a research release assembled from an evaluated project snapshot. It does not grant rights to redistribute third-party libraries, pretrained weights, or provider-hosted medical data. Review upstream licenses and dataset terms before reuse.
+This repository provides research code and analysis inputs accompanying the CMIG manuscript. The author team has not assigned a repository-wide software license in this release. Citation information is provided in [CITATION.cff](CITATION.cff).
+
+Dataset access and reuse follow the provider terms linked in [Data access](docs/data_access.md). Third-party code and pretrained resources retain their respective licenses and attribution requirements. This documentation release records those resource locations and the existing research materials.

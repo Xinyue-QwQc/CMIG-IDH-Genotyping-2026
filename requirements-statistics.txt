@@ -1,0 +1,2 @@
+# Dependencies for reproducibility/main_statistics.py.
+numpy==1.26.4

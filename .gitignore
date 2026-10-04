@@ -11,3 +11,11 @@ __pycache__/
 *.hdf5
 wandb/
 checkpoints/
+
+# Local environments and generated statistical outputs.
+.venv/
+venv/
+reproduced_results/
+smoke_results/
+.DS_Store
+Thumbs.db

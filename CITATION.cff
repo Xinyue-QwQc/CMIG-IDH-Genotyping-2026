@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying CMIG manuscript when using this code and analysis package."
+type: software
+title: "Clinical Knowledge Guided Foundation Model Customization on Multimodal MRI for Glioma IDH Genotyping"
+authors:
+  - family-names: Chen
+    given-names: Yingxu
+  - family-names: Wen
+    given-names: Jingqing
+  - family-names: Li
+    given-names: Shunuo
+  - family-names: Cheng
+    given-names: Jianhong
+  - family-names: Liu
+    given-names: Jin
+  - family-names: Wang
+    given-names: Jie
+  - family-names: Kan
+    given-names: Shichao
+  - family-names: Kuang
+    given-names: Hulin
+repository-code: "https://github.com/Xinyue-QwQc/CMIG-IDH-Genotyping-2026"

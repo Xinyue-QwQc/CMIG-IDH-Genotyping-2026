@@ -1,41 +1,77 @@
-# CMIG IDH Genotyping 2026
+# Clinical Knowledge Guided Foundation Model Customization on Multimodal MRI for Glioma IDH Genotyping
 
-Code and pseudonymous fixed-model evaluation inputs for the manuscript **Clinical Knowledge Guided Foundation Model Customization on Multimodal MRI for Glioma IDH Genotyping**.
+This repository provides the code and statistical analysis inputs for the CMIG manuscript **Clinical Knowledge Guided Foundation Model Customization on Multimodal MRI for Glioma IDH Genotyping**.
 
-## Release contents
+## Data Access
 
-- `source/` contains the 185-file evaluation source snapshot used for the archived September 2026 analysis.
-- `reproducibility/` contains pseudonymous manifests, predictions, recorded metrics, timing measurements, and the fixed-model bootstrap analysis script.
-- `metadata/` contains provenance, version verification, schema, and exclusion notes.
+The study uses four publicly accessible MRI datasets. Obtain images and clinical annotations from the dataset providers under their access and citation terms.
 
-## Version status
+1. [BraTS2020](https://www.med.upenn.edu/cbica/brats2020/data.html). The study uses the TCIA/TCGA portion with available IDH, age, and sex annotations. The [BraTS2020 mirror](https://www.kaggle.com/datasets/awsaf49/brats20-dataset-training-validation) and [MTTU-Net](https://github.com/miacsu/MTTU-Net) provide additional imaging and label resources.
+2. [IvyGAP](https://www.cancerimagingarchive.net/collection/ivygap/). Related processed images and annotations are described in [IvyGAP-Radiomics](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=70222827).
+3. [UPENN-GBM](https://www.cancerimagingarchive.net/collection/upenn-gbm/).
+4. [UCSF-PDGM](https://www.cancerimagingarchive.net/collection/ucsf-pdgm/). The CMIG evaluation uses the Version 3 structural-image package, comprising 501 scans from 495 patient groups.
 
-This distribution repairs the statistics entry point from historical commit `8a5fff4e5cff07829aa31fab766a241f0e1bd3ba`. The 185 `source/` files, `reproducibility/main_statistics.py`, and `reproducibility/selected_predictions.json` retain the historical commit bytes. Prediction values and statistical methods are unchanged. Use this repository together with the manuscript Supplementary package.
+Dataset versions, study subsets, and distributed analysis inputs are described in [Data access and study cohorts](docs/data_access.md). MRI images and original clinical tables are obtained from their providers; this repository distributes study pseudonyms, predictions, and derived summaries.
 
-The evaluated `evaluation_code_snapshot.zip` is supplied in the manuscript at `Supplementary/Reproducibility/evaluation_code_snapshot.zip`, with SHA-256 `baa4256228d0a06f871097ad7a14750f3aebc281c7e352af676749e77ad1230a`. That Supplementary ZIP contains 190 files: 185 source files and five evaluation/timing tools. The five tools and the separately supplied 3DINO YAML configuration files are obtained from the Supplementary package; they are outside this local repository copy.
+## Prerequisites
 
-The 28 `reproducibility/predictions/*.csv` files retain the current Supplementary originals byte-for-byte, including CRLF line endings, and match the unchanged prediction manifest hashes. `.gitattributes` marks these paths `-text` to preserve those bytes. `reproducibility/SHA256SUMS.csv` lists actual files relative to `reproducibility/`, excludes itself, and uses LF.
+### Python environment preparation
 
-## Statistical recomputation
+For statistical recomputation, prepare a Python environment and install NumPy:
 
-Python 3 and NumPy are required. From this repository root, run:
+```bash
+conda create -n cmig-idh python=3.9
+conda activate cmig-idh
+pip install -r requirements-statistics.txt
+```
+
+For MRI model development, `requirements.txt` points to the normalized model dependency reference in `source/requirements.txt`. Environment preparation, separate text dependencies, and required local resources are explained in [Installation](docs/installation.md).
+
+### Checkpoint preparation for the foundation models
+
+The [SAM-Med3D repository](https://github.com/uni-medical/SAM-Med3D) provides the visual foundation-model resources. The [BioLinkBERT-large repository](https://huggingface.co/michiyasunaga/BioLinkBERT-large) provides the text encoder and tokenizer.
+
+The evaluated CMIG model also uses a study-specific checkpoint and a fixed description embedding. Their identifiers and the evaluation protocol are documented in the manuscript Supplementary material. [Installation](docs/installation.md) lists the resources needed to regenerate MRI predictions.
+
+## Statistical Reproduction
+
+From the repository root, run:
 
 ```bash
 python reproducibility/main_statistics.py --manifest reproducibility/selected_predictions.json --out reproduced_results
 ```
 
-The default formal analysis uses 20,000 patient-cluster bootstrap replicates, seed `20260920`, and 52 paired comparisons with Holm correction. A short entry check uses:
+The formal analysis uses 20,000 patient-cluster bootstrap replicates, seed `20260920`, and 52 paired comparisons with Holm correction. The inputs cover 14 models and two test cohorts. A shorter program check uses:
 
 ```bash
-python reproducibility/main_statistics.py --manifest reproducibility/selected_predictions.json --out smoke_results --smoke --bootstrap 2
+python reproducibility/main_statistics.py --manifest reproducibility/selected_predictions.json --out smoke_results --smoke --bootstrap 100
 ```
 
-The smoke output is a program check and does not replace the reported formal analysis.
+See [Reproducibility](reproducibility/README.md) for inputs, outputs, and interpretation.
 
-## Scope and access
+## Repository Structure
 
-This repository does not contain MRI volumes, original case identifiers, clinical source records, model checkpoints, or third-party pretrained weights. The source code retains machine-specific paths from the evaluated snapshot; local assets and path/resource preparation are required for training or MRI inference. Dataset access remains subject to the terms of TCIA, BraTS, UPENN-GBM, IVY-GAP, and UCSF-PDGM. The available inputs directly support fixed-prediction statistical recomputation; MRI prediction regeneration requires the assets and permissions described in the Supplementary package.
+```text
+.
+├── README.md
+├── CITATION.cff
+├── NOTICE.md
+├── requirements.txt
+├── requirements-statistics.txt
+├── docs/                 # Dataset, installation, and version guides
+├── source/               # MRI model, training, and development code
+├── reproducibility/      # Predictions, statistical analysis, and recorded results
+└── metadata/             # Source identities and original environment records
+```
 
-The paper records the selected checkpoint hash and the evaluated source snapshot in `metadata/code_provenance.json`; the checkpoint itself is outside this copy. Historical provenance documents are retained from the base commit.
+See the [source guide](source/README.md) and [metadata guide](metadata/README.md) for directory details. Historical source and distribution versions are documented in [Version history](docs/version_history.md). Citation information is provided in [CITATION.cff](CITATION.cff); reuse terms are described in [NOTICE.md](NOTICE.md).
 
-The historical release was assembled on 2026-09-29. Distribution integrity and entry-point documentation were corrected on 2026-10-02.
+## Acknowledgement
+
+We thank the investigators and data providers responsible for BraTS2020, TCIA/TCGA, IvyGAP, UPENN-GBM, and UCSF-PDGM. We acknowledge the support of the High-Performance Computing Center of Central South University.
+
+We also thank the authors of the following projects:
+
+- [SAM-Med3D](https://github.com/uni-medical/SAM-Med3D)
+- [BioLinkBERT](https://huggingface.co/michiyasunaga/BioLinkBERT-large)
+- [MTTU-Net](https://github.com/miacsu/MTTU-Net)

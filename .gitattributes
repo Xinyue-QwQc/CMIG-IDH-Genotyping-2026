@@ -12,3 +12,10 @@ reproducibility/main_statistics.py -text
 
 # Preserve the Supplementary prediction CSV bytes and CRLF checksums.
 reproducibility/predictions/*.csv -text
+
+# Format current source documentation while retaining original exports.
+source/README.md text eol=lf
+source/requirements.txt text eol=lf
+source/text_requirements.txt text eol=lf
+metadata/environment_snapshots/*_original.txt -text
+*.cff text eol=lf

@@ -1,0 +1,2 @@
+# MRI model environment reference. See docs/installation.md.
+-r source/requirements.txt

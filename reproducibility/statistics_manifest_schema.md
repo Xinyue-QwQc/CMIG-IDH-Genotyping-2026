@@ -1,70 +1,96 @@
-# 统计脚本输入清单与运行说明
+# Statistical Manifest Schema
 
-脚本 `main_statistics.py` 只读取本地预测并计算统计，不训练、不推理、不连接服务器。正式分析固定为 20,000 次 bootstrap、随机种子 20260920、52 项 Holm 校正；`--smoke` 只用于验证，其输出不得用于论文。
+The distributed `selected_predictions.json` provides the complete 14-model, two-cohort analysis. Use that file for the CMIG reproduction commands. The following fragment illustrates fields using actual distributed paths; it is an excerpt rather than a complete formal manifest.
 
 ```json
 {
   "schema_version": 1,
-  "mapping_path": "../../审稿补充材料_旧实验整理_2026-09-20/evidence/data_case_mapping.json",
+  "mapping_path": "case_mapping.json",
   "seed": 20260920,
   "bootstrap": 20000,
   "ours_model": "Ours",
   "planned_models": [
-    {"model": "Ours", "display_name": "Ours"},
-    {"model": "EViT", "display_name": "EViT"}
+    {
+      "model": "Ours",
+      "display_name": "Ours (FinalVersion 2026-06-01)"
+    }
   ],
   "cohorts": [
-    {"id": "Internal", "mapping_dataset": "Internal", "mapping_split": "Test"},
-    {"id": "External", "mapping_dataset": "External", "mapping_split": "Test"}
+    {
+      "id": "Internal",
+      "mapping_dataset": "Internal",
+      "mapping_split": "Test"
+    },
+    {
+      "id": "External",
+      "mapping_dataset": "External",
+      "mapping_split": "Test"
+    }
   ],
   "predictions": [
     {
-      "id": "ours_internal",
+      "id": "Ours_Internal",
       "model": "Ours",
-      "display_name": "Ours",
       "cohort": "Internal",
       "status": "selected",
-      "path": "predictions/ours_internal.csv",
-      "sha256": "完整64位SHA256"
-    },
-    {
-      "id": "ours_external_missing",
-      "model": "Ours",
-      "cohort": "External",
-      "status": "missing",
-      "path": null,
-      "reason": "尚未完成导出"
+      "path": "predictions/Ours_Internal.csv",
+      "sha256": "08348b3daa11b0fc11d45484c18e021b598b20be3cb2c52e2d38494b39454aaa"
     }
   ]
 }
 ```
 
-上例只展示字段结构。正式 `planned_models` 必须填写 Ours 和全部 13 个基线，两个队列；未提供预测的计划模型仍然占主表与比较表行，显示 NA。`status` 为 `selected` 的文件才进入计算；其他状态与 `reason` 保留在输出中。每个 `model,cohort` 组合最多一条记录，每条预测的 `id` 唯一。其他来源证据字段可保存在条目中，会原样保存在 `manifest_used.json`。
+## Manifest Fields
 
-路径可为绝对路径，也可相对于 manifest 所在目录。`mapping_path` 使用旧材料 `data_case_mapping.json` 的 `cases` 字典结构。脚本按队列对应 dataset 和 Test split 形成完整预期 ID 集；患者组使用映射中的 `patient_group`，无此字段时使用 `patient_id`，不以未知记录 ID 替代患者。映射中不存在的患者、组内标签冲突、预测缺失/多余 ID、重复 ID、标签冲突、非有限分数、超出 [0,1] 的分数、哈希不一致均拒绝进入计算，输出具体原因。
+| Field | Meaning |
+| --- | --- |
+| `schema_version` | Input schema version; currently 1 |
+| `mapping_path` | Case mapping path, resolved relative to the manifest file |
+| `seed`, `bootstrap` | Formal defaults: 20260920 and 20000 |
+| `ours_model` | Model used as the reference in paired comparisons |
+| `planned_models` | Unique model identifiers and display names |
+| `cohorts` | Cohort identifiers and mapping dataset/split selectors |
+| `predictions` | One entry per model/cohort, with a unique prediction ID |
 
-CSV 默认字段为 `ID,idh_truth,pred,pred_class`。正类为 IDH-mutant=1。保存类别必须等于 `pred > 0.5`，精确 0.5 归 WT。可为单条预测配置 `score_column: "score"`，或配置 `columns: {"id":"ID", "label":"idh_truth", "score":"score", "class":"pred_class"}`。若存在 `patient_group` 和 `source` 列，也须与映射一致。
+Each selected prediction entry supplies `id`, `model`, `cohort`, `status`, `path`, and `sha256`. Paths may be absolute or relative to the manifest directory. The current release uses paths within this repository. Other provenance fields are retained in `manifest_used.json`.
 
-PowerShell 运行：
+## Case Mapping and Predictions
 
-```powershell
-python .\tools\test_main_statistics.py
-python .\tools\main_statistics.py --manifest .\inputs\selected_predictions.json --out .\results
-python .\tools\build_delivery.py
+`case_mapping.json` contains a `cases` dictionary. Each study record has its source, class label, cohort, split, order, and `patient_id` or `patient_group`. These identifiers are study pseudonyms. The script determines the complete expected case set for each test cohort from that mapping and resamples patient groups jointly across their scans.
+
+The default prediction columns are `ID`, `idh_truth`, `pred`, and `pred_class`. IDH-mutant is class 1. Scores must be finite values in [0, 1]; the saved class equals `pred > 0.5`, with a score of exactly 0.5 assigned to wild-type. Per-file `columns` or `score_column` settings support alternative column names. Optional source and patient-group columns are checked against the mapping.
+
+The script checks file SHA-256, complete case sets, duplicate IDs, class labels, patient-group consistency, and the saved classification rule. Selected but invalid files are reported in `input_validation.csv`. Entries outside the selected status retain their availability reason in the output.
+
+## Commands
+
+From the repository root:
+
+```bash
+python reproducibility/main_statistics.py --manifest reproducibility/selected_predictions.json --out reproduced_results
 ```
 
-正式命令必须在本补充文件夹下运行。`--bootstrap 500 --smoke` 可以检查程序与输入，其输出请指向单独的 smoke 文件夹。缺失预测是显式部分结果，退出码为 0；已提供但校验错误的文件还会令退出码为 2；manifest 本身结构错误立即报错。
+For a reduced-resample program check:
 
-输出包括：
+```bash
+python reproducibility/main_statistics.py --manifest reproducibility/selected_predictions.json --out smoke_results --smoke --bootstrap 100
+```
 
-- `metrics_long.csv`：每个模型/队列的 9 个指标、逐项 95% CI、有效重采样数和警告。
-- `main_results.csv`、`main_table_Internal.md`、`main_table_External.md`：宽表及便于核对的主表。
-- `paired_comparisons.csv`：Ours 减去每个基线的 AUC、ACC 差值、95% CI、原始和 Holm 校正 p 值；差值同时保存比例与百分点。
-- `input_validation.csv`：输入校验、SHA256、分类规则、病例与患者数、混淆矩阵；未纳入条目保留原因。
-- `patient_index_*.csv` 与 `bootstrap_patient_weights_*.npz`：按 ID 排序的病例到患者映射、每次抽样的患者次数。每个患者的全部扫描始终使用相同次数。
-- `bootstrap_metrics.npz`：每个已纳入模型的全部 bootstrap 指标；数组对应关系存于 `analysis_summary.json`。
-- `analysis_summary.json`、`manifest_used.json`：协议、版本、输入及程序哈希、有效分析数量和解释限制。
+Formal analysis requires 14 models, two cohorts, 20,000 replicates, seed 20260920, and 52 planned comparisons. Program-check results use a separate output directory and describe execution with reduced resampling.
 
-分类指标无定义时输出 NA 并记录有效次数。完全相同预测的差值为 0、p=1；非零而 bootstrap 差值完全恒定的退化比较保留差值/区间但 p 为 NA，不把最小 Monte Carlo 值误作可靠证据。Holm 始终保留 52 项家族，尚不可检验项在内部以 p=1 占位，展示仍为 NA。
+## Outputs
 
-`build_delivery.py` 默认读取正式结果及选定清单，生成 `reports/统计结果报告.md`、`paper_revision/main_tables.tex`、`paper_revision/statistics_methods.tex` 和 `paper_revision/审稿回复草稿.md`，不会覆盖原始论文。它拒绝 smoke 结果、清单改变后未重算的结果以及指标/比较行数不完整的输入。正式输入 28/28 可用才会在 `reports/delivery_summary.json` 中标为 `complete`，否则明确为 `partial` 并列出缺项。它支持 `--manifest`、`--results`、`--out-root` 指定独立位置。
+| Output | Contents |
+| --- | --- |
+| `metrics_long.csv` | Nine metrics per model/cohort, confidence intervals, valid replicate counts, and warnings |
+| `main_results.csv`, `main_table_*.md` | Wide result tables and readable cohort summaries |
+| `paired_comparisons.csv` | Ours-minus-baseline ACC/AUC differences, intervals, raw and Holm-adjusted p values |
+| `input_validation.csv` | File hashes, case and patient counts, confusion matrices, and availability status |
+| `patient_index_*.csv` | Ordered scan-to-patient-group mappings |
+| `bootstrap_patient_weights_*.npz` | Resampling multiplicities for patient groups |
+| `bootstrap_metrics.npz` | Bootstrap metric draws |
+| `analysis_summary.json`, `manifest_used.json` | Protocol settings, environment information, validation summary, and input identities |
+
+Proportions are on the 0–1 scale. Paired differences additionally include percentage-point fields. Undefined metrics and unavailable comparisons are reported explicitly. Holm correction retains one planned family of 52 tests.
+
+The command returns exit code 2 for supplied prediction files that fail validation. A structurally invalid manifest raises an error. A manifest with missing predictions can produce partial output with exit code 0, so inspect validation status as well as the process exit code. The distributed CMIG manifest is complete.
